@@ -1,18 +1,20 @@
 # Flipkart Reviews Sentiment Analysis
 
-A beginner-friendly Python project for sentiment analysis of Flipkart product reviews. This project classifies reviews into **Positive**, **Neutral**, and **Negative** sentiments using machine learning models.
+A beginner-friendly Python project for sentiment analysis of Flipkart product reviews. This project classifies reviews into **Positive**, **Neutral**, and **Negative** sentiments using machine learning models. It also includes **sarcasm detection** to identify potentially sarcastic reviews.
 
 ## Project Overview
 
 This project analyzes Flipkart product reviews and predicts their sentiment based on the review text. It uses:
 - **TF-IDF** for feature extraction
-- **Naive Bayes** and **Logistic Regression** for classification
+- **Naive Bayes** and **Logistic Regression** for sentiment classification
+- **Logistic Regression** for sarcasm detection
 - **Word Clouds** and **Bar Charts** for visualization
 
 ## Features
 
 - Modular code structure with separate files for each task
 - Interactive sentiment predictor
+- Sarcasm detection with confidence score
 - Word cloud generation for positive and negative reviews
 - Confusion matrix visualization
 - Model comparison table
@@ -24,13 +26,15 @@ This project analyzes Flipkart product reviews and predicts their sentiment base
 Flipkart-Sentiment-Analysis/
 │
 ├── data/
-│   └── flipkart_data.csv
+│   ├── flipkart_data.csv
+│   └── sarcastic_flipkart_reviews_10000.csv
 │
 ├── src/
 │   ├── data_loader.py
 │   ├── preprocessing.py
 │   ├── visualization.py
 │   ├── model.py
+│   ├── sarcasm_model.py
 │   ├── predictor.py
 │   └── main.py
 │
@@ -88,7 +92,7 @@ This will:
 - Generate visualizations
 - Train both models
 - Evaluate and compare models
-- Start interactive prediction
+- Start interactive prediction (with sarcasm detection)
 
 ## How to Run Notebook
 
@@ -109,7 +113,7 @@ After running the project, you will get:
 - **Word Clouds** - Visual representation of frequent words
 - **Confusion Matrices** - For both Naive Bayes and Logistic Regression
 - **Model Comparison Table** - Accuracy, Precision, Recall, F1 Score
-- **Interactive Predictor** - Test your own reviews
+- **Interactive Predictor** - Test your own reviews with sentiment and sarcasm detection
 
 ## Sample Prediction
 
@@ -122,6 +126,7 @@ Enter your review:
 This phone is amazing.
 
 Predicted Sentiment : Positive
+Sarcasm Detected    : Not Sarcastic (Confidence: 85.2%)
 
 Would you like to test another review? (Y/N):
 ```
