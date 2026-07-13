@@ -1,26 +1,43 @@
 # Flipkart Reviews Sentiment Analysis
 
-A beginner-friendly Python project for sentiment analysis of Flipkart product reviews. This project classifies reviews into **Positive**, **Neutral**, and **Negative** sentiments using machine learning models. It also includes **sarcasm detection** to identify potentially sarcastic reviews.
+An end-to-end machine learning project that analyzes Flipkart product reviews to determine sentiment polarity and detect sarcasm in user-generated text.
 
-## Project Overview
+---
 
-This project analyzes Flipkart product reviews and predicts their sentiment based on the review text. It uses:
-- **TF-IDF** for feature extraction
-- **Naive Bayes** and **Logistic Regression** for sentiment classification
-- **Logistic Regression** for sarcasm detection
-- **Word Clouds** and **Bar Charts** for visualization
+## About
 
-## Features
+This project provides an automated pipeline for classifying customer reviews into **Positive**, **Neutral**, and **Negative** sentiments. It also incorporates a dedicated **sarcasm detection** module that flags potentially sarcastic reviews, helping improve the reliability of sentiment predictions.
 
-- Modular code structure with separate files for each task
-- Interactive sentiment predictor
-- Sarcasm detection with confidence score
-- Word cloud generation for positive and negative reviews
-- Confusion matrix visualization
-- Model comparison table
-- Analytical results with top words analysis
+Built with a modular architecture, the system is designed for clarity, maintainability, and ease of extension.
 
-## Folder Structure
+---
+
+## What This Project Includes
+
+- **Sentiment Classification** — Categorizes reviews into Positive, Neutral, or Negative using trained ML models
+- **Sarcasm Detection** — Identifies sarcastic reviews with confidence scores using Logistic Regression
+- **Model Comparison** — Evaluates Naive Bayes against Logistic Regression to select the best-performing model
+- **Interactive Prediction** — Allows users to input custom reviews and receive instant predictions
+- **Text Preprocessing Pipeline** — Handles lowercasing, URL removal, punctuation stripping, tokenization, and stopword removal
+- **TF-IDF Vectorization** — Converts raw text into meaningful numerical features for model training
+- **Visualization Suite** — Generates word clouds, sentiment distribution charts, and confusion matrices
+
+---
+
+## Tech Stack
+
+| Category | Tools |
+|---|---|
+| Language | Python 3.12 |
+| Data Handling | Pandas, NumPy |
+| Machine Learning | Scikit-learn (Logistic Regression, Naive Bayes, TF-IDF) |
+| NLP | NLTK (tokenization, stopwords) |
+| Visualization | Matplotlib, Seaborn, WordCloud |
+| Version Control | Git, GitHub |
+
+---
+
+## Project Structure
 
 ```
 Flipkart-Sentiment-Analysis/
@@ -38,84 +55,60 @@ Flipkart-Sentiment-Analysis/
 │   ├── predictor.py
 │   └── main.py
 │
-├── sentiment/
-│   └── sentiment_analysis.ipynb
-│
 ├── output/
+│   ├── sentiment_distribution.png
 │   ├── positive_wordcloud.png
 │   ├── negative_wordcloud.png
-│   ├── sentiment_distribution.png
 │   ├── confusion_matrix_nb.png
 │   ├── confusion_matrix_lr.png
 │   └── model_comparison.csv
 │
-├── requirements.txt
-├── README.md
-└── .gitignore
+└── requirements.txt
 ```
 
-## Installation
+---
 
-1. Clone this repository:
+## Getting Started
+
+### Prerequisites
+
+- Python 3.12 or higher
+- pip
+
+### Installation
+
 ```bash
-git clone https://github.com/yourusername/Flipkart-Sentiment-Analysis.git
+git clone https://github.com/jprem97/VibeLens.git
 cd Flipkart-Sentiment-Analysis
-```
-
-2. Install required packages:
-```bash
 pip install -r requirements.txt
 ```
 
-## Required Libraries
+### Running the Project
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- wordcloud
-- nltk
-- scikit-learn
-- jupyter
-
-## How to Run
-
-Run the main script:
 ```bash
 python src/main.py
 ```
 
-This will:
-- Load the dataset
-- Perform EDA
-- Clean the reviews
-- Generate visualizations
-- Train both models
-- Evaluate and compare models
-- Start interactive prediction (with sarcasm detection)
+This executes the full pipeline — data loading, exploratory analysis, preprocessing, model training, evaluation, and launches the interactive prediction interface.
 
-## How to Run Notebook
+---
 
-1. Open Jupyter Notebook:
-```bash
-jupyter notebook
-```
+## How It Works
 
-2. Navigate to `sentiment/sentiment_analysis.ipynb`
+The system follows a structured workflow:
 
-3. Run all cells to see the complete pipeline
+1. **Data Loading** — Reads Flipkart review datasets from CSV files
+2. **Exploratory Analysis** — Displays dataset shape, missing values, and rating distribution
+3. **Label Creation** — Derives sentiment and sarcasm labels from review ratings
+4. **Text Cleaning** — Applies a unified preprocessing pipeline to all reviews
+5. **Feature Engineering** — Transforms cleaned text into TF-IDF vectors
+6. **Model Training** — Trains Naive Bayes and Logistic Regression for sentiment; Logistic Regression for sarcasm
+7. **Evaluation** — Measures performance using accuracy, precision, recall, and F1 score
+8. **Interactive Prediction** — Accepts user input and returns sentiment and sarcasm predictions
 
-## Expected Outputs
+---
 
-After running the project, you will get:
-
-- **Sentiment Distribution Chart** - Bar chart showing review counts
-- **Word Clouds** - Visual representation of frequent words
-- **Confusion Matrices** - For both Naive Bayes and Logistic Regression
-- **Model Comparison Table** - Accuracy, Precision, Recall, F1 Score
-- **Interactive Predictor** - Test your own reviews with sentiment and sarcasm detection
-
-## Sample Prediction
+## Sample Output
 
 ```
 =================================
@@ -131,19 +124,8 @@ Sarcasm Detected    : Not Sarcastic (Confidence: 85.2%)
 Would you like to test another review? (Y/N):
 ```
 
-## Screenshots
+---
 
-### Sentiment Distribution
-![Sentiment Distribution](output/sentiment_distribution.png)
+## License
 
-### Positive Word Cloud
-![Positive Word Cloud](output/positive_wordcloud.png)
-
-### Negative Word Cloud
-![Negative Word Cloud](output/negative_wordcloud.png)
-
-### Confusion Matrix - Naive Bayes
-![Confusion Matrix NB](output/confusion_matrix_nb.png)
-
-### Confusion Matrix - Logistic Regression
-![Confusion Matrix LR](output/confusion_matrix_lr.png)
+This project is for educational and academic purposes.
