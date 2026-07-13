@@ -9,7 +9,7 @@ import sys
 from collections import Counter
 
 # Add project root to path for imports
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from src.data_loader import load_data, explore_data
 from src.preprocessing import create_sentiment, preprocess_reviews
@@ -63,7 +63,7 @@ def main():
     # ---------------------------
     # 1. Load Dataset
     # ---------------------------
-    data_path = os.path.join(os.path.dirname(__file__), "data", "flipkart_data.csv")
+    data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "flipkart_data.csv")
     df = load_data(data_path)
 
     # ---------------------------
